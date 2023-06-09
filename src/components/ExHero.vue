@@ -80,7 +80,7 @@ export default {
 .hero {
   /* padding-top: 120px; */
   position: relative;
-  padding-bottom: 300px;
+  padding-bottom: 670px;
   overflow: visible;
 }
 .hero_container {
