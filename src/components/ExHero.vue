@@ -41,28 +41,28 @@ export default {
         </p>
         <button class="hero_btn">Начать сейчас</button>
       </div>
-      <div :class="{active: isScrolled}" class="hero_cycle-items-wrapper">
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+      <div :class="{ active: isScrolled }" class="hero_cycle-items-wrapper">
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           📙 Онлайн обучение
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           💬 Cообшество экспертов
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           🧠 Психологическая диагностика
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           🎉 События
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           🧾 Сертификация
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           📊 Инвестирование проектов
-        </p>
-        <p :class="{ active: isScrolled }" class="hero_cycle-item">
+        </a>
+        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
           💼 Вакансии и поиск работы
-        </p>
+        </a>
       </div>
     </div>
     <div class="bckg_image">
@@ -212,7 +212,7 @@ export default {
     transform: rotate(5deg) scale(1.05);
   }
   50% {
-    transform: rotate(0) scale(1); 
+    transform: rotate(0) scale(1);
   }
   100% {
     transform: rotate(-5deg) scale(1.05);

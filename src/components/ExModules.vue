@@ -162,7 +162,7 @@
 
 <style>
 .modules {
-    padding-bottom: 170px;
+  padding-bottom: 170px;
 }
 .modules_title {
   font-weight: 500;
@@ -171,7 +171,7 @@
   text-align: center;
   color: #181818;
   padding-bottom: 70px;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .modules_list {
   display: flex;
@@ -278,12 +278,12 @@
   overflow: hidden;
 }
 .modules_list-botom {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 .modules_item-img1 {
-    position: absolute;
-    top: 50px;
-    right: 0;
+  position: absolute;
+  top: 50px;
+  right: 0;
 }
 </style>
