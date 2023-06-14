@@ -18,11 +18,11 @@ export default {
 <template>
   <mainHeader />
   <main>
-    <mainHero />
-    <mainModules />
-    <mainNews />
+    <mainHero id="hero" />
+    <mainModules id="modules" />
+    <mainNews id="news" />
   </main>
-  <mainFooter />
+  <mainFooter id="footer" />
 </template>
 
 <style>

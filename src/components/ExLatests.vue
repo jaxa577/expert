@@ -13,7 +13,7 @@ export default {
   <section class="latest">
     <div class="container latest_container">
       <h2 class="latest_title">Последние публикации</h2>
-      <swiper :slides-per-view="1" :space-between="30" :loop="false">
+      <swiper :slides-per-view="1" :space-between="20" :loop="false">
         <swiper-slide class="latest_card">
           <a href="#!">
             <div class="latest_card-image">
@@ -182,6 +182,9 @@ export default {
 </template>
 
 <style>
+.latest {
+  padding-top: 100px;
+}
 .latest_title {
   font-weight: 500;
   font-size: 58px;
@@ -194,21 +197,28 @@ export default {
   background: #ffffff;
   border-radius: 20px;
   max-width: 285px;
+  overflow: hidden;
 }
 .latest_card-image {
   position: relative;
   height: 175px;
   width: 100%;
   margin-bottom: 18px;
-  border-radius: 20px;
+  overflow: hidden;
 }
 .latest_card-image img {
   width: 285px;
   height: 175px;
   object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease-in-out;
+}
+.latest_card:hover .latest_card-image img {
+  transform: scale(1.1);
 }
 .latest_card-date {
   position: absolute;
+  transform: translateX(-100%);
   bottom: 0;
   left: 0;
   background: #448fff;
@@ -218,6 +228,10 @@ export default {
   font-size: 12px;
   line-height: 150%;
   color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.latest_card:hover .latest_card-date {
+  transform: translate(0);
 }
 .latest_card-desc {
   padding: 0 20px 40px 20px;

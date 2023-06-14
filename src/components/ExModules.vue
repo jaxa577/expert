@@ -16,14 +16,14 @@
                 профессиональной деятельности
               </p>
             </div>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               14 682 Вакансий
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
             <img
               class="modules_item-img"
               src="/images/modules_bckg1.svg"
@@ -37,14 +37,14 @@
                 Платформа которая собрала в себе множество инструментов
               </p>
             </div>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               Подать заявку
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
           </div>
           <div class="modules_mini-item">
             <div>
@@ -55,14 +55,14 @@
                 Платформа которая собрала в себе множество инструментов
               </p>
             </div>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               Пройти тест
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -74,14 +74,14 @@
                 Платформа которая собрала в себе множество инструментов
               </p>
             </div>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               12 342 Сообшеств
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
           </div>
           <div class="modules_big-item">
             <div>
@@ -93,14 +93,14 @@
                 профессиональной деятельности
               </p>
             </div>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               14 682 Вакансий
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
             <img
               class="modules_item-img"
               src="/images/modules_line.svg"
@@ -118,14 +118,14 @@
               Платформа которая собрала в себе множество инструментов для
               профессиональной деятельности
             </p>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               15 342 Курсов
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
             <img
               class="modules_item-img1"
               src="/images/modules_sharps.svg"
@@ -140,14 +140,14 @@
               Платформа которая собрала в себе множество инструментов для
               профессиональной деятельности
             </p>
-            <button class="modules_item-btn">
+            <a href="#!" class="modules_item-btn">
               12 342 Заказов
               <img
                 class="modules_btn-img"
                 src="/images/arrow-right.svg"
                 alt="arrow"
               />
-            </button>
+            </a>
             <img
               class="modules_item-img1"
               src="/images/modules_star.svg"
@@ -162,7 +162,8 @@
 
 <style>
 .modules {
-  padding-bottom: 170px;
+  padding-top: 120px;
+  padding-bottom: 70px;
 }
 .modules_title {
   font-weight: 500;
@@ -171,7 +172,12 @@
   text-align: center;
   color: #181818;
   padding-bottom: 70px;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(247,248,249, 0.8); */
+  background: linear-gradient(
+    180deg,
+    #f7f8f9 58.72%,
+    rgba(247, 248, 249, 0.5) 100%
+  );
 }
 .modules_list {
   display: flex;
@@ -220,6 +226,10 @@
   align-items: center;
   gap: 12px;
   margin-top: 20px;
+}
+.modules_item-btn:hover {
+  color: #448fff;
+  text-decoration: none;
 }
 .modules_btn-img {
   transition: all 0.3s ease;
@@ -285,5 +295,14 @@
   position: absolute;
   top: 50px;
   right: 0;
+}
+.dd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  align-items: center;
 }
 </style>

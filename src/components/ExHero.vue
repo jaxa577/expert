@@ -4,22 +4,71 @@ export default {
     return {
       isScrolled: false,
       scrollHeight: 0,
+      heroList: [
+        {
+          name: "Онлайн обучение",
+          link: "/courses",
+        },
+        {
+          name: "Cообшество экспертов",
+          link: "#!",
+        },
+        {
+          name: "Психологическая диагностика",
+          link: "#!",
+        },
+        {
+          name: "События",
+          link: "#!",
+        },
+        {
+          name: "Сертификация",
+          link: "#!",
+        },
+        {
+          name: "Инвестирование проектов",
+          link: "#!",
+        },
+        {
+          name: "Вакансии и поиск работы",
+          link: "#!",
+        },
+      ],
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("wheel", this.handleScroll);
+    this.heroEl();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    heroEl() {
+      // console.log(this.$refs.heroItem[0]);
+      for (let index = 0; index < this.heroList.length; index++) {
+        // const element = this.heroList[index];
+        setTimeout(() => {
+          console.log(this.$refs.heroItem[index]);
+          if (this.isScrolled) {
+            this.$refs.heroItem[index].classList.add("active");
+          } else {
+            this.$refs.heroItem[index].classList.remove("active");
+          }
+          // element.classList.add("active");
+        }, index * 350);
+      }
+    },
     handleScroll() {
-      console.log(this.scrollHeight, "scroll");
+      // console.log(this.scrollHeight, "scroll");
       this.scrollHeight = window.pageYOffset;
       if (window.pageYOffset >= 200) {
+        this.heroEl();
         this.isScrolled = true;
       } else {
         this.isScrolled = false;
+        this.heroEl();
       }
     },
   },
@@ -27,7 +76,7 @@ export default {
 </script>
 
 <template>
-  <section class="hero">
+  <section :class="{ active: isScrolled }" class="hero">
     <div class="container hero_container">
       <div class="hero_desc">
         <h2 class="hero_title">
@@ -42,26 +91,14 @@ export default {
         <button class="hero_btn">Начать сейчас</button>
       </div>
       <div :class="{ active: isScrolled }" class="hero_cycle-items-wrapper">
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          📙 Онлайн обучение
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          💬 Cообшество экспертов
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          🧠 Психологическая диагностика
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          🎉 События
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          🧾 Сертификация
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          📊 Инвестирование проектов
-        </a>
-        <a href="#!" :class="{ active: isScrolled }" class="hero_cycle-item">
-          💼 Вакансии и поиск работы
+        <a
+          v-for="(item, index) in heroList"
+          ref="heroItem"
+          :href="item.link"
+          class="hero_cycle-item"
+        >
+          <img :src="`images/hero${index + 1}.svg`" alt="" />
+          {{ item.name }}
         </a>
       </div>
     </div>
@@ -80,8 +117,8 @@ export default {
 .hero {
   /* padding-top: 120px; */
   position: relative;
-  padding-bottom: 670px;
-  overflow: visible;
+  padding-bottom: 550px;
+  overflow: hidden;
 }
 .hero_container {
 }
@@ -91,7 +128,11 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    #f7f8f9 58.72%,
+    rgba(247, 248, 249, 0.5) 100%
+  );
   padding-bottom: 50px;
 }
 .hero_title {
@@ -130,19 +171,25 @@ export default {
   position: absolute;
   top: 50px;
   left: 50%;
-  transform: translateX(-50%) scale(1.1);
+  transform: translateX(-50%) scale(3);
   z-index: -1;
-  transition: all 0.3s ease;
+  opacity: 0.2;
+  transition: all 0.7s ease-in-out;
 }
 .hero_cycle-items-wrapper {
   position: relative;
   width: 100%;
 }
 .bckg_image-item.active {
-  animation-name: scaleAnimation;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  /* animation-name: scaleAnimation;
   animation-duration: 5s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; */
+}
+.hero.active {
+  overflow: visible;
 }
 .hero_cycle-item {
   position: absolute;
@@ -152,8 +199,8 @@ export default {
   border-radius: 16px;
   padding: 10px 20px;
   width: fit-content;
+  transition: all 0.5s;
   transform: scale(0);
-  transition: all 0.6s ease;
 }
 .hero_cycle-item:nth-child(1) {
   top: 60px;
@@ -186,13 +233,13 @@ export default {
 .hero_cycle-item.active {
   transform: scale(1) translateY(-100px);
   /* animation-name: scaleItems;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate; */
 }
 .hero_cycle-items-wrapper.active {
   animation-name: scaleItems;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -209,13 +256,13 @@ export default {
 }
 @keyframes scaleItems {
   0% {
-    transform: rotate(5deg) scale(1.05);
+    transform: scale(1.05);
   }
   50% {
-    transform: rotate(0) scale(1);
+    transform: scale(1);
   }
   100% {
-    transform: rotate(-5deg) scale(1.05);
+    transform: scale(1.05);
   }
 }
 </style>

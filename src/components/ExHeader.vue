@@ -35,19 +35,19 @@ export default {
       <a href="#!"><img src="/images/logo.svg" alt="logo" /></a>
 
       <div class="header_nav-list">
-        <RouterLink class="header_nav-item" to="#!">
+        <a class="header_nav-item" href="#hero">
           <p data-text="О нас" class="header_nav-item-txt">О нас</p>
-        </RouterLink>
+        </a>
 
-        <RouterLink class="header_nav-item" to="#!">
+        <a class="header_nav-item" href="#modules">
           <p data-text="Модули" class="header_nav-item-txt">Модули</p>
-        </RouterLink>
-        <RouterLink class="header_nav-item" to="#!">
+        </a>
+        <a class="header_nav-item" href="#news">
           <p data-text="Новости" class="header_nav-item-txt">Новости</p>
-        </RouterLink>
-        <RouterLink class="header_nav-item" to="#!">
+        </a>
+        <a class="header_nav-item" href="#footer">
           <p data-text="Контакты" class="header_nav-item-txt">Контакты</p>
-        </RouterLink>
+        </a>
       </div>
 
       <div class="header_login">

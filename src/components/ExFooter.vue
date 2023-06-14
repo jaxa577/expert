@@ -36,23 +36,41 @@
 .footer {
   background: #ffffff;
   padding: 60px 0 90px 0;
+  margin-top: 120px;
 }
 .footer_container {
-    display: flex;
-    justify-content: space-between;
-    gap: 170px;
+  display: flex;
+  gap: 170px;
 }
 .footer_left {
 }
 .footer_lists {
-    display: flex;
-    gap: 170px;
+  display: flex;
+  gap: 170px;
+  justify-content: space-between;
 }
 .footer_list {
-    
+  /* max-width: 250px; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .footer_list-title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  color: #448fff;
 }
 .footer_list-item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: #181818;
+  transition: all .3s ease;
 }
+.footer_list-item:hover {
+  color: #448fff;
+}
+
 </style>
