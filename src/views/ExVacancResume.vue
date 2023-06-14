@@ -1,22 +1,14 @@
 <script>
-import mainHeader from "../components/ExHeader.vue";
-import mainFooter from "../components/ExFooter.vue";
 import mainBanner from "../components/ExBanner.vue";
-import mainCourseTop from "../components/ExRecomendedCourses.vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
 export default {
-  components: {
-    mainHeader,
-    mainFooter,
-    mainBanner,
-    mainCourseTop,
-  },
-};
+    components: {
+        mainBanner,
+    }
+}
 </script>
 
 <template>
-  <mainHeader />
-  <mainBanner
+<mainBanner
     currentPage="Поиск Вакансий/Резюме"
     title="Обучающие курсы по разным направлениям"
     firstLink="#!"
@@ -26,12 +18,8 @@ export default {
     bannerImage="briefcase.svg"
     class="banner-item"
   />
-  <mainCourseTop />
-  <mainFooter />
 </template>
 
 <style>
-.banner-item {
-  padding-top: 140px;
-}
+
 </style>

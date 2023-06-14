@@ -32,7 +32,7 @@ export default {
 <template>
   <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container header_container">
-      <a href="#!"><img src="/images/logo.svg" alt="logo" /></a>
+      <a href="/"><img src="/images/logo.svg" alt="logo" /></a>
 
       <div class="header_nav-list">
         <a class="header_nav-item" href="#hero">

@@ -50,18 +50,15 @@ export default {
       for (let index = 0; index < this.heroList.length; index++) {
         // const element = this.heroList[index];
         setTimeout(() => {
-          console.log(this.$refs.heroItem[index]);
           if (this.isScrolled) {
             this.$refs.heroItem[index].classList.add("active");
           } else {
             this.$refs.heroItem[index].classList.remove("active");
           }
-          // element.classList.add("active");
         }, index * 350);
       }
     },
     handleScroll() {
-      // console.log(this.scrollHeight, "scroll");
       this.scrollHeight = window.pageYOffset;
       if (window.pageYOffset >= 200) {
         this.heroEl();
@@ -115,7 +112,6 @@ export default {
 
 <style>
 .hero {
-  /* padding-top: 120px; */
   position: relative;
   padding-bottom: 550px;
   overflow: hidden;
@@ -183,10 +179,6 @@ export default {
 .bckg_image-item.active {
   transform: translateX(-50%) scale(1);
   opacity: 1;
-  /* animation-name: scaleAnimation;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
 }
 .hero.active {
   overflow: visible;
@@ -232,10 +224,6 @@ export default {
 }
 .hero_cycle-item.active {
   transform: scale(1) translateY(-100px);
-  /* animation-name: scaleItems;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
 }
 .hero_cycle-items-wrapper.active {
   animation-name: scaleItems;
