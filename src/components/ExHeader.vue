@@ -13,11 +13,11 @@ export default {
 
   methods: {
     handleScroll(e) {
-      if (window.pageYOffset > 120) {
+      if (window.pageYOffset > 80) {
         this.isScrolled = true;
       } else if (
         e.wheelDelta >= 0 &&
-        window.pageYOffset < 120 &&
+        window.pageYOffset < 80 &&
         window.pageYOffset != 0
       ) {
         this.isScrolled = true;
@@ -69,11 +69,13 @@ export default {
   left: 0;
   right: 0;
   z-index: 99;
-  padding: 30px 0;
-  background-color: #FFFFFF;
+  padding: 12px 0;
   backdrop-filter: blur(5px);
   width: 100%;
-  transition: 0.3s;
+  transition: 0.4s;
+}
+.header.scrolled {
+  background: #ffffff;
 }
 .header_container {
   display: flex;

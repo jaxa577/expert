@@ -1,89 +1,66 @@
 <script>
-import courseCard from "./ExCourseCard.vue";
+import vacancyCard from "./ExVacancyCard.vue";
 
 export default {
   components: {
-    courseCard,
+    vacancyCard,
   },
   data() {
     return {
-      courses: [
+      vacanyList: [
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 1,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 2,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 3,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 4,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 5,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
         {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
-        },
-        {
-          name: "Графический дизайн",
-          image: "image1.png",
-          ownerImage: "owner.png",
-          ownerName: "Real Soft Academy",
-          ownerStatus: "Компания",
-          materials: "10",
-          rating: "4.5",
-          cost: "100 000",
-          link: "/about_course",
+          id: 6,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          company: "Real Soft Academy",
+          location: "Ташкент",
+          date: "Maй 30, 2023",
+          viewed: "1234",
         },
       ],
       currentPagination: 1,
@@ -163,18 +140,16 @@ export default {
             </button>
           </div>
           <div class="catalogue_course-list">
-            <courseCard
-              v-for="(card, index) in courses"
+            <vacancyCard
+              v-for="(vacancy, index) in vacanyList"
               :key="`courseCards${index}`"
-              :name="card.name"
-              :image="card.image"
-              :ownerImage="card.ownerImage"
-              :ownerName="card.ownerName"
-              :ownerStatus="card.ownerStatus"
-              :materials="card.materials"
-              :rating="card.rating"
-              :cost="card.cost"
-              :link="card.link"
+              :name="vacancy.name"
+              :id="vacancy.id"
+              :company="vacancy.company"
+              :salary="vacancy.salary"
+              :location="vacancy.location"
+              :date="vacancy.date"
+              :viewed="vacancy.viewed"
             />
           </div>
           <div class="catalogue_pagination">

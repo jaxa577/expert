@@ -9,12 +9,13 @@ export default {
     materials: String,
     rating: String,
     cost: String,
+    link: String,
   },
 };
 </script>
 
 <template>
-  <a href="#!">
+  <a :href="link">
     <div class="course_card">
       <div class="course_card-image">
         <img :src="`/images/${image}`" alt="course image" />

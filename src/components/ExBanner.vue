@@ -17,8 +17,9 @@ export default {
     <div class="banner_container container">
       <div class="banner_top-links">
         <a class="banner_top-link" href="/">
-          Главная <img src="/images/chevron-right.svg" alt="" />
+          Главная
         </a>
+        <img src="/images/chevron-right.svg" alt="" />
         <a class="banner_top-link active" href="#!"> {{ currentPage }} </a>
       </div>
       <div class="banner_inner">

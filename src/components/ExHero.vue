@@ -7,65 +7,95 @@ export default {
       heroList: [
         {
           name: "Онлайн обучение",
+          active: false,
           link: "/courses",
         },
         {
           name: "Cообшество экспертов",
+          active: false,
           link: "#!",
         },
         {
           name: "Психологическая диагностика",
+          active: false,
           link: "#!",
         },
         {
           name: "События",
+          active: false,
           link: "#!",
         },
         {
           name: "Сертификация",
+          active: false,
           link: "#!",
         },
         {
           name: "Инвестирование проектов",
+          active: false,
           link: "#!",
         },
         {
           name: "Вакансии и поиск работы",
-          link: "#!",
+          active: false,
+          link: "/vacancy_resume",
         },
       ],
+      parallaxOffset: 0,
+      cursorX: 0,
+      cursorY: 0,
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("wheel", this.handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
     this.heroEl();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousemove", this.handleMouseMove);
+    window.removeEventListener("wheel", this.handleScroll);
   },
   methods: {
     heroEl() {
-      // console.log(this.$refs.heroItem[0]);
       for (let index = 0; index < this.heroList.length; index++) {
-        // const element = this.heroList[index];
         setTimeout(() => {
           if (this.isScrolled) {
             this.$refs.heroItem[index].classList.add("active");
+            this.heroList[index].active = true;
           } else {
             this.$refs.heroItem[index].classList.remove("active");
+            this.heroList[index].active = false;
           }
-        }, index * 350);
+        }, index * 400);
       }
+    },
+    handleMouseMove(event) {
+      this.cursorX = event.clientX;
+      this.cursorY = event.clientY;
+      // if (this.isScrolled) {
+      //   setTimeout(() => {
+      //     for (let index = 0; index < this.heroList.length; index++) {
+      //       if (this.isScrolled) {
+      //         this.$refs.heroItem[index].style.transform = `translate(calc(-50% + ${this.cursorX / 20}px), calc(-50% + ${this.cursorY / 20}px))`;
+      //       }else {
+      //         this.$refs.heroItem[index].style.transform = `scale(0)`
+      //       }
+      //     }
+      //   }, this.heroList.length * 350);
+      // }
     },
     handleScroll() {
       this.scrollHeight = window.pageYOffset;
       if (window.pageYOffset >= 200) {
         this.heroEl();
         this.isScrolled = true;
+        this.parallaxOffset = this.scrollHeight / 2;
       } else {
         this.isScrolled = false;
         this.heroEl();
+        this.parallaxOffset = 0;
       }
     },
   },
@@ -97,6 +127,12 @@ export default {
           <img :src="`images/hero${index + 1}.svg`" alt="" />
           {{ item.name }}
         </a>
+        <!-- :style="{
+            transform: `translate(calc(-100% + ${cursorX / 5}px), calc(-100% + ${
+              cursorY / 5
+            }px)) scale(${item.active ? 1 : 0})`,
+            transition: `all transform ${index * 6}ms ease`,
+          }" -->
       </div>
     </div>
     <div class="bckg_image">
@@ -115,6 +151,11 @@ export default {
   position: relative;
   padding-bottom: 550px;
   overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #f7f8f9 58.72%,
+    rgba(247, 248, 249, 0.5) 100%
+  );
 }
 .hero_container {
 }
@@ -165,16 +206,19 @@ export default {
 }
 .bckg_image-item {
   position: absolute;
-  top: 50px;
+  top: 145px;
   left: 50%;
-  transform: translateX(-50%) scale(3);
+  transform: translateX(-50%) scale(4);
   z-index: -1;
-  opacity: 0.2;
-  transition: all 0.7s ease-in-out;
+  opacity: 0;
+  transition: all 0.9s ease-in-out;
+  z-index: -9;
 }
 .hero_cycle-items-wrapper {
   position: relative;
   width: 100%;
+  transform: translateY(-100px);
+  /* transition: all 0.7s ease; */
 }
 .bckg_image-item.active {
   transform: translateX(-50%) scale(1);
@@ -223,7 +267,7 @@ export default {
   right: 85px;
 }
 .hero_cycle-item.active {
-  transform: scale(1) translateY(-100px);
+  transform: scale(1);
 }
 .hero_cycle-items-wrapper.active {
   animation-name: scaleItems;
@@ -233,24 +277,24 @@ export default {
 }
 @keyframes scaleAnimation {
   0% {
-    transform: translateX(-50%) rotate(0deg) scale(1.1);
+    transform: translateX(-50%) rotate(0deg) scale(1.01);
   }
   50% {
     transform: translateX(-50%) rotate(180deg) scale(1);
   }
   100% {
-    transform: translateX(-50%) rotate(360deg) scale(1.1);
+    transform: translateX(-50%) rotate(360deg) scale(1.01);
   }
 }
 @keyframes scaleItems {
   0% {
-    transform: scale(1.05);
+    transform: translateY(-100px) scale(1.02);
   }
   50% {
-    transform: scale(1);
+    transform: translateY(-100px) scale(1);
   }
   100% {
-    transform: scale(1.05);
+    transform: translateY(-100px) scale(1.02);
   }
 }
 </style>
