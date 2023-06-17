@@ -1,9 +1,11 @@
 <script>
 import vacancyCard from "./ExVacancyCard.vue";
+import resumeCard from "./ExResumeCard.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 export default {
   components: {
     vacancyCard,
+    resumeCard,
     Swiper,
     SwiperSlide,
   },
@@ -65,6 +67,85 @@ export default {
           viewed: "1234",
         },
       ],
+      resumeList: [
+        {
+          id: 1,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 2,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 3,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 4,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 5,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 6,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+        {
+          id: 7,
+          name: "Мененджер по маркетингу и продвижению",
+          salary: "10 000 000-16 000 000",
+          status: "Ищу работу",
+          location: "Ташкент",
+          changed: "Maй 30, 2023",
+          viewed: "1234",
+          age: "28",
+          experience: "4 года",
+        },
+      ],
       currentTab: 0,
     };
   },
@@ -100,13 +181,13 @@ export default {
       </div>
       <swiper :slides-per-view="1" :space-between="20" :loop="false">
         <swiper-slide
+          v-if="currentTab == 0"
           v-for="(vacancy, index) in vacanyList"
           :key="`top${index}`"
           class="latest_card"
         >
           <vacancyCard
-            v-if="currentTab == 0"
-            :key="`courseCards${index}`"
+            :key="`vacancyCards${index}`"
             :name="vacancy.name"
             :id="vacancy.id"
             :company="vacancy.company"
@@ -114,6 +195,26 @@ export default {
             :location="vacancy.location"
             :date="vacancy.date"
             :viewed="vacancy.viewed"
+          />
+        </swiper-slide>
+        <swiper-slide
+          v-if="currentTab == 1"
+          v-for="(resume, index) in resumeList"
+          :key="`top${index}`"
+          class="latest_card"
+        >
+          <resumeCard
+            :key="`resumeCards${index}`"
+            :name="resume.name"
+            :id="resume.id"
+            :company="resume.company"
+            :salary="resume.salary"
+            :location="resume.location"
+            :changed="resume.date"
+            :viewed="resume.viewed"
+            :age="resume.age"
+            :experience="resume.experience"
+            :status="resume.status"
           />
         </swiper-slide>
       </swiper>

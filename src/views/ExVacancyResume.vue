@@ -4,7 +4,7 @@ import mainFooter from "../components/ExFooter.vue";
 import mainBanner from "../components/ExBanner.vue";
 import mainVRCatalogue from "../components/ExVRCatalogue.vue";
 import mainVRTop from "../components/ExVRTop.vue";
-// import test from "../components/ExVacancyCard.vue";
+import test from "../components/ExResumeCard.vue";
 
 export default {
   components: {
@@ -13,6 +13,7 @@ export default {
     mainBanner,
     mainVRCatalogue,
     mainVRTop,
+    test,
   },
 };
 </script>
@@ -32,6 +33,7 @@ export default {
       class="banner-item"
     />
     <mainVRTop />
+    <test />
     <mainVRCatalogue />
   </main>
 
