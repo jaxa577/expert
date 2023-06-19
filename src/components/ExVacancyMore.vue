@@ -88,7 +88,7 @@ export default {
 
 <style scoped>
 .materials {
-  margin-top: 90px;
+  margin-top: 0;
   padding-bottom: 90px;
 }
 .materials_intro {
