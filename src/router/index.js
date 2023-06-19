@@ -4,7 +4,8 @@ import Courses from "../views/EXCourseCatalogue.vue";
 import CoursesInfo from "../views/EXCourseInfo.vue";
 import VacanyResume from "../views/ExVacancyResume.vue";
 import VacanyInfo from "../views/ExVacancyInfo.vue";
-import Test from "../views/EXTest.vue"
+import Test from "../views/EXTest.vue";
+import login from "../views/ExLogin.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: "/psyco_test",
       name: "psyco_test",
       component: Test,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: login,
     },
   ],
 });

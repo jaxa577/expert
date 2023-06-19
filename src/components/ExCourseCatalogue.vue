@@ -17,6 +17,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -27,6 +28,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -37,6 +39,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -47,6 +50,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -57,6 +61,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -67,6 +72,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
         {
           name: "Графический дизайн",
@@ -77,6 +83,7 @@ export default {
           count: "10",
           rating: "4.5",
           cost: "100 000",
+          link: "/about_course",
         },
       ],
       languages: [
@@ -143,8 +150,8 @@ export default {
             <h4 class="catalogue_filter-inner-title">Цена курса:</h4>
             <div class="catalogue_filter_list-item">
               <div class="catalogue_filter-item-input">
-                <input id="1" type="checkbox" />
-                <label for="1">Бесплатно</label>
+                <input id="free" type="checkbox" />
+                <label for="free">Бесплатно</label>
               </div>
               <p class="catalogue_filter-item-count">(12)</p>
             </div>
@@ -279,7 +286,7 @@ export default {
   flex-direction: column;
   gap: 20px;
 }
-.catalogue_filter_list-item {
+/* .catalogue_filter_list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -301,6 +308,52 @@ export default {
   font-size: 16px;
   line-height: 150%;
   color: #5a5a5a;
+} */
+.catalogue_filter_list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.catalogue_filter-item-input {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.catalogue_filter-item-input label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #5a5a5a;
+  cursor: pointer;
+}
+.catalogue_filter-item-count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #5a5a5a;
+}
+.catalogue_filter-item-input input[type="checkbox"] {
+  display: none;
+}
+.catalogue_filter-item-input label:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #448fff;
+  border-radius: 4px;
+  background-color: white;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+.catalogue_filter-item-input input[type="checkbox"]:checked + label:before {
+  background-color: #448fff;
+  border-color: #448fff;
+  width: 17px;
+  height: 17px;
 }
 .catalogue_dir-btn {
   background: #ecf4ff;
