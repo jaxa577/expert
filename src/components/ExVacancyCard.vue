@@ -45,7 +45,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .vacancy_card {
   padding: 30px 16px;
   background: #ffffff;
