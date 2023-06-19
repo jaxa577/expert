@@ -6,19 +6,16 @@
       <div class="cHero_links">
         <a class="cHero_link" href="/">Главная</a>
         <img src="/images/chevron-right.svg" alt="arrow" />
-        <a class="cHero_link" href="/courses">Поиск курсов</a>
+        <a class="cHero_link" href="/vacancy_resume">Поиск курсов</a>
         <img src="/images/chevron-right.svg" alt="arrow" />
-        <a class="cHero_link active" href="#!">Страница курса</a>
+        <a class="cHero_link active" href="#!">Страница вакансии</a>
       </div>
       <div class="cHero_main">
         <div class="cHero_desc">
-          <h2 class="cHero_title">Platon dasturi bilan tanishish</h2>
-          <p class="cHero_text">
-            Platon - yirik elektron axborot tizimlari va ma'lumotlar bazalarini
-            tez, sifatli, qo'shimcha sarf-xarajatlarsiz ishlab chiqish, boshqa
-            axborot tizimlari bilan bog'lanish hamda mustaqil takomillashtirib
-            borishga mo'ljallangan dasturiy mahsulot to'plami.
-          </p>
+          <h2 class="cHero_title">Мененджер по маркетингу и продвижению</h2>
+          <h3 class="cHero_cost">
+            10 000 000 <span class="cHero_currency">Cум</span>
+          </h3>
           <div class="cHero_extra">
             <div class="cHero_extra-main">
               <img class="cHero_extra-img" src="/images/owner.png" alt="" />
@@ -36,10 +33,17 @@
             </div>
           </div>
           <div class="cHero_bottom">
-            <a href="#!" class="cHero_btn">Записаться на курс</a>
-            <h3 class="cHero_cost">
-              10 000 000 <span class="cHero_currency">Cум</span>
-            </h3>
+            <a href="#!" class="cHero_btn">Откликнуться на вакансию</a>
+            <div class="cHero_extra-info">
+              <div class="cHero_extra-info-item">
+                <h4 class="cHero_extra-info-title">Опубликованно</h4>
+                <p class="cHero_extra-info-value">Maй 30, 2023</p>
+              </div>
+              <div class="cHero_extra-info-item">
+                <h4 class="cHero_extra-info-title">Посмотрели</h4>
+                <p class="cHero_extra-info-value">1 234 человек</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="cHero_image">
@@ -84,7 +88,7 @@
 }
 .cHero_title {
   font-weight: 500;
-  font-size: 58px;
+  font-size: 38px;
   line-height: 130%;
   color: #181818;
   margin-bottom: 20px;
@@ -96,7 +100,7 @@
   color: #5a5a5a;
 }
 .cHero_extra {
-    margin: 30px 0;
+  margin: 30px 0;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -197,5 +201,28 @@
   height: 465px;
   object-fit: cover;
   object-position: center;
+}
+.cHero_extra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cHero_extra-info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.cHero_extra-info-title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #5a5a5a;
+}
+.cHero_extra-info-value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #181818;
 }
 </style>
