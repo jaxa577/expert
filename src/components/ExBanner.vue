@@ -16,9 +16,7 @@ export default {
   <section class="banner">
     <div class="banner_container container">
       <div class="banner_top-links">
-        <a class="banner_top-link" href="/">
-          Главная
-        </a>
+        <a class="banner_top-link" href="/"> Главная </a>
         <img src="/images/chevron-right.svg" alt="" />
         <a class="banner_top-link active" href="#!"> {{ currentPage }} </a>
       </div>
@@ -38,7 +36,7 @@ export default {
         </div>
         <img
           class="banner_circling"
-          src="/images/banner_circle.svg"
+          src="/images/back_circle.svg"
           alt="circling"
         />
       </div>
@@ -123,12 +121,14 @@ export default {
   position: absolute;
   top: 35px;
   right: 68px;
+  z-index: 999;
 }
 .banner_circling {
   position: absolute;
-  right: 0;
-  z-index: 00;
-  animation: pulse-animation 4s infinite;
+  right: -55%;
+  z-index: 0;
+  filter: brightness(0) invert(0.8);
+  animation: pulse-animation 5s infinite;
 }
 
 @keyframes pulse-animation {
