@@ -41,7 +41,7 @@ export default {
         {{ viewed?.toLocaleString() }} человек
       </h4>
     </div>
-    <button class="vacancy_card-btn">Откликнуться</button>
+    <a href="/about_vacancy" class="vacancy_card-btn">Откликнуться</a>
   </div>
 </template>
 
@@ -128,6 +128,9 @@ export default {
   color: #181818;
 }
 .vacancy_card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   background: #ffffff;
   border: 1px solid #448fff;
