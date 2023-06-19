@@ -13,7 +13,6 @@ export default {
     mainBanner,
     mainVRCatalogue,
     mainVRTop,
-    test,
   },
 };
 </script>
@@ -33,7 +32,6 @@ export default {
       class="banner-item"
     />
     <mainVRTop />
-    <test />
     <mainVRCatalogue />
   </main>
 

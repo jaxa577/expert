@@ -3,6 +3,7 @@ import HomeView from "../views/ExHome.vue";
 import Courses from "../views/EXCourseCatalogue.vue";
 import CoursesInfo from "../views/EXCourseInfo.vue";
 import VacanyResume from "../views/ExVacancyResume.vue";
+import VacanyInfo from "../views/ExVacancyInfo.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/vacancy_resume",
       name: "vacancy_resume",
       component: VacanyResume,
+    },
+    {
+      path: "/about_vacancy",
+      name: "about_vacancy",
+      component: VacanyInfo,
     },
   ],
 });
