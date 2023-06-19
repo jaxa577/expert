@@ -101,7 +101,7 @@ export default {
 <template>
     <section class="catalogue">
         <div class="container catalogue_container">
-            <h2 class="catalogue_title">Каталог курсов</h2>
+            <h2 class="catalogue_title">Каталог тестов</h2>
             <div class="catalogue_main">
                 <div class="catalogue_filters">
                     <div class="catalogue_filter-item">
