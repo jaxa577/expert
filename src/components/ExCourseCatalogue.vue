@@ -8,83 +8,109 @@ export default {
   data() {
     return {
       courses: [
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-                {
-                    name: "Графический дизайн",
-                    image: "image1.png",
-                    ownerImage: "owner.png",
-                    ownerName: "Real Soft Academy",
-                    ownerStatus: "Компания",
-                    count: "10",
-                    rating: "4.5",
-                    cost: "100 000",
-                },
-            ],
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+        {
+          name: "Графический дизайн",
+          image: "image1.png",
+          ownerImage: "owner.png",
+          ownerName: "Real Soft Academy",
+          ownerStatus: "Компания",
+          count: "10",
+          rating: "4.5",
+          cost: "100 000",
+        },
+      ],
+      languages: [
+        {
+          id: 1,
+          name: "Узбек",
+        },
+        {
+          id: 2,
+          name: "O'zbek",
+        },
+        {
+          id: 3,
+          name: "Русский",
+        },
+        {
+          id: 4,
+          name: "English",
+        },
+      ],
       currentPagination: 1,
+      currentOption: "Tilni tanlang",
+      isSelectOpened: false,
     };
   },
   methods: {
     changePagination(nextPage) {
       this.currentPagination = nextPage;
+    },
+    changeoption(id, i) {
+      this.currentOption = this.languages[i].name;
+    },
+    toggleSellect() {
+      this.isSelectOpened = !this.isSelectOpened;
     },
   },
 };
@@ -136,11 +162,28 @@ export default {
 
           <div class="catalogue_filter-item">
             <h4 class="catalogue_filter-inner-title">Язык курса:</h4>
-            <select class="catalogue_select" name="language" id="">
-              <option value="1">UZ</option>
-              <option value="1">RUS</option>
-              <option value="1">ENG</option>
-            </select>
+            <div
+              @click="toggleSellect"
+              :class="{ active: isSelectOpened }"
+              class="catalogue_select-list"
+            >
+              <div class="catalogue_select-list-item">
+                {{ currentOption }}
+                <img
+                  class="catalogue_select-arrow"
+                  src="/images/arrow_bottom.svg"
+                  alt="arrow"
+                  :class="{ active: isSelectOpened }"
+                />
+              </div>
+              <div
+                v-for="(option, index) in languages"
+                @click="changeoption(option.id, index)"
+                class="catalogue_select-list-item"
+              >
+                {{ option.name }}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -370,5 +413,47 @@ export default {
 .catalogue_pagination-item.active {
   background: #448fff;
   color: #ffffff;
+}
+
+/* Custom Select */
+
+.catalogue_select-list {
+  background: #f7f8f9;
+  border: 1px solid rgba(90, 90, 90, 0.1);
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 44px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.catalogue_select-list.active {
+  max-height: 300px;
+}
+.catalogue_select-list-item {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #181818;
+  /* padding: 5px 0; */
+}
+.catalogue_select-list-item:nth-child(1) {
+  padding-bottom: 15px;
+  position: relative;
+  /* border-bottom: 1px solid #ffffff; */
+}
+.catalogue_select-arrow {
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 16px;
+  height: 16px;
+}
+.catalogue_select-arrow.active {
+  transform: rotate(-180deg);
 }
 </style>
