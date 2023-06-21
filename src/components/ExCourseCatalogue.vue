@@ -603,7 +603,14 @@ export default {
     z-index: 9;
     left: 50%;
     top: 174px;
+    width: calc(100% + 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transform: translateX(-50%) translateY(-150%);
+    backdrop-filter: blur(10px);
+    padding: 40px 0;
+    padding-bottom: 100px;
     transition: all 0.4s ease;
   }
   .catalogue_filters.active {
@@ -615,6 +622,10 @@ export default {
   .catalogue_filter-mob,
   .catalogue_close-filter {
     display: block;
+  }
+  .catalogue_filter-item {
+    max-width: 285px;
+    width: 100%;
   }
 }
 </style>
