@@ -133,6 +133,9 @@ export default {
       <h2 class="catalogue_title">Каталог курсов</h2>
       <div class="catalogue_main">
         <div :class="{ active: isFilter }" class="catalogue_filters">
+          <button @click="openMobileFilter" class="catalogue_close-filter">
+            Закрыть
+          </button>
           <div class="catalogue_filter-item">
             <h3 class="catalogue_filter-item-title">Фильтрация</h3>
             <h4 class="catalogue_filter-inner-title">Направления:</h4>
@@ -209,20 +212,9 @@ export default {
               <img src="/images/search.svg" alt="" />
             </button>
           </div>
-          <button
-            v-if="!isFilter"
-            @click="openMobileFilter"
-            class="catalogue_filter-mob"
-          >
+          <button @click="openMobileFilter" class="catalogue_filter-mob">
             <img src="/images/filter.svg" alt="filter" />
             Фильтрация
-          </button>
-          <button
-            v-else
-            @click="openMobileFilter"
-            class="catalogue_close-filter"
-          >
-            Закрыть
           </button>
           <div class="catalogue_course-list">
             <courseCard
@@ -585,6 +577,7 @@ export default {
   color: #181818;
   transition: all 0.3s ease;
   margin-bottom: 30px;
+  max-width: 285px;
   display: none;
 }
 .catalogue_close-filter:hover {
@@ -599,11 +592,12 @@ export default {
     font-size: 38px;
   }
   .catalogue_filters {
-    position: absolute;
+    position: fixed;
     z-index: 9;
     left: 50%;
-    top: 174px;
+    top: 59px;
     width: calc(100% + 40px);
+    height: calc(100vh - 209px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -611,7 +605,9 @@ export default {
     backdrop-filter: blur(10px);
     padding: 40px 0;
     padding-bottom: 100px;
+    overflow-y: scroll;
     transition: all 0.4s ease;
+    z-index: 9999;
   }
   .catalogue_filters.active {
     transform: translateX(-50%) translateX(0);
