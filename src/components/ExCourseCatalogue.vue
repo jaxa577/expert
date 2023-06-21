@@ -107,6 +107,7 @@ export default {
       currentPagination: 1,
       currentOption: "Tilni tanlang",
       isSelectOpened: false,
+      isFilter: false,
     };
   },
   methods: {
@@ -119,6 +120,9 @@ export default {
     toggleSellect() {
       this.isSelectOpened = !this.isSelectOpened;
     },
+    openMobileFilter() {
+      this.isFilter = !this.isFilter;
+    },
   },
 };
 </script>
@@ -128,7 +132,7 @@ export default {
     <div class="container catalogue_container">
       <h2 class="catalogue_title">Каталог курсов</h2>
       <div class="catalogue_main">
-        <div class="catalogue_filters">
+        <div :class="{ active: isFilter }" class="catalogue_filters">
           <div class="catalogue_filter-item">
             <h3 class="catalogue_filter-item-title">Фильтрация</h3>
             <h4 class="catalogue_filter-inner-title">Направления:</h4>
@@ -205,6 +209,21 @@ export default {
               <img src="/images/search.svg" alt="" />
             </button>
           </div>
+          <button
+            v-if="!isFilter"
+            @click="openMobileFilter"
+            class="catalogue_filter-mob"
+          >
+            <img src="/images/filter.svg" alt="filter" />
+            Фильтрация
+          </button>
+          <button
+            v-else
+            @click="openMobileFilter"
+            class="catalogue_close-filter"
+          >
+            Закрыть
+          </button>
           <div class="catalogue_course-list">
             <courseCard
               v-for="(card, index) in courses"
@@ -232,11 +251,15 @@ export default {
           </div>
         </div>
       </div>
+      <div :class="{ active: isFilter }" class="catalogue_filter-mob-bottom">
+        <button class="filter_mob-btn">Применить</button>
+        <button class="filter_mob-btn2">Сбросить</button>
+      </div>
     </div>
   </section>
 </template>
 
-<style>
+<style scoped>
 .catalogue {
   margin-top: 80px;
 }
@@ -286,29 +309,6 @@ export default {
   flex-direction: column;
   gap: 20px;
 }
-/* .catalogue_filter_list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.catalogue_filter-item-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.catalogue_filter-item-input label {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 130%;
-  color: #5a5a5a;
-}
-.catalogue_filter-item-count {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: #5a5a5a;
-} */
 .catalogue_filter_list-item {
   display: flex;
   align-items: center;
@@ -508,5 +508,113 @@ export default {
 }
 .catalogue_select-arrow.active {
   transform: rotate(-180deg);
+}
+.catalogue_filter-mob {
+  background: #ecf4ff;
+  border-radius: 200px;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #448fff;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  display: none;
+}
+.catalogue_filter-mob:hover {
+  opacity: 0.7;
+}
+.catalogue_filter-mob-bottom {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 10px;
+  background: #ffffff;
+  z-index: 999;
+  transition: all 0.4s ease;
+}
+.catalogue_filter-mob-bottom.active {
+  bottom: 0;
+}
+.filter_mob-btn {
+  background: #448fff;
+  border: 1px solid #448fff;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #ffffff;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.filter_mob-btn:hover {
+  background: #ffffff;
+  color: #448fff;
+}
+.filter_mob-btn2 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #5a5a5a;
+  width: 100%;
+}
+.catalogue_close-filter {
+  background: #f7f8f9;
+  border: 1px solid #5a5a5a;
+  border-radius: 200px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #181818;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  display: none;
+}
+.catalogue_close-filter:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .catalogue_main {
+    position: relative;
+  }
+  .catalogue_title {
+    font-weight: 500;
+    font-size: 38px;
+  }
+  .catalogue_filters {
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    top: 174px;
+    transform: translateX(-50%) translateY(-150%);
+    transition: all 0.4s ease;
+  }
+  .catalogue_filters.active {
+    transform: translateX(-50%) translateX(0);
+  }
+  .catalogue_course-list {
+    justify-content: center;
+  }
+  .catalogue_filter-mob,
+  .catalogue_close-filter {
+    display: block;
+  }
 }
 </style>

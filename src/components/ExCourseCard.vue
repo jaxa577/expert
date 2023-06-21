@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-  <a :href="link">
-    <div class="course_card">
+  <div class="course_card-wrapper" :href="link">
+    <a :href="link" class="course_card">
       <div class="course_card-image">
         <img :src="`/images/${image}`" alt="course image" />
         <div class="course_card-like">
@@ -54,8 +54,8 @@ export default {
           </h3>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </template>
 
 <style>
@@ -160,5 +160,15 @@ export default {
   line-height: 150%;
   color: #5a5a5a;
   margin-left: 8px;
+}
+@media only screen and (max-width: 768px) {
+  .course_card-wrapper {
+    max-width: 400px;
+    width: 100%;
+  }
+  .course_card {
+    max-width: 400px !important;
+    display: block;
+  }
 }
 </style>

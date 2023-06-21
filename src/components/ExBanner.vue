@@ -32,7 +32,11 @@ export default {
           </div>
         </div>
         <div class="banner_image">
-          <img :src="`/images/${bannerImage}`" alt="banner image" />
+          <img
+            :src="`/images/${bannerImage}`"
+            class="banner_bck-img"
+            alt="banner image"
+          />
         </div>
         <img
           class="banner_circling"
@@ -130,7 +134,6 @@ export default {
   filter: brightness(0) invert(0.8);
   animation: pulse-animation 7s infinite;
 }
-
 @keyframes pulse-animation {
   0% {
     transform: scale(1);
@@ -143,6 +146,56 @@ export default {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .banner_desc {
+    width: 100%;
+    max-width: unset;
+  }
+  .banner_title {
+    padding-bottom: 225px;
+    font-size: 40px;
+    line-height: 120%;
+  }
+  .banner_image {
+    top: 50%;
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .banner_circling {
+    top: 50%;
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .banner_btns {
+    flex-direction: column;
+  }
+  .banner_btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner_inner {
+    padding: 25px 15px;
+  }
+
+  @keyframes pulse-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
   }
 }
 </style>

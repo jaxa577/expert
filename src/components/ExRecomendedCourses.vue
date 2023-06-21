@@ -93,8 +93,12 @@ export default {
     <div class="container recommended_container">
       <h2 class="recommended_title">Рекомендуемые курсы</h2>
       <swiper :slides-per-view="1" :space-between="20" :loop="false">
-        <swiper-slide v-for="(card, index) in courses" :key="`top${index}`" class="latest_card">
-          <courseCard 
+        <swiper-slide
+          v-for="(card, index) in courses"
+          :key="`top${index}`"
+          class="latest_card"
+        >
+          <courseCard
             :name="card.name"
             :image="card.image"
             :ownerImage="card.ownerImage"
@@ -102,7 +106,8 @@ export default {
             :ownerStatus="card.ownerStatus"
             :materials="card.materials"
             :rating="card.rating"
-            :cost="card.cost"/>
+            :cost="card.cost"
+          />
         </swiper-slide>
       </swiper>
     </div>
@@ -121,5 +126,11 @@ export default {
   margin-bottom: 40px;
 }
 .cards_list {
+}
+@media only screen and (max-width: 768px) {
+  .recommended_title {
+    font-size: 38px;
+    line-height: 120%;
+  }
 }
 </style>
