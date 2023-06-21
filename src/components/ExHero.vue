@@ -277,10 +277,15 @@ export default {
 }
 @media only screen and (max-width: 1024px) {
   .hero.active {
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+  .hero {
+    padding-bottom: 625px;
   }
   .hero_desc {
     padding-top: 100px;
+  }
+  .hero_title {
     font-size: 38px;
     line-height: 120%;
   }
@@ -335,9 +340,9 @@ export default {
   }
 }
 @media only screen and (max-width: 768px) {
-    .hero_btn {
-        width: 100%;
-    }
+  .hero_btn {
+    width: 100%;
+  }
 }
 @keyframes scaleAnimation {
   0% {

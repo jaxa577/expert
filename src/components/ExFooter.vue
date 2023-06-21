@@ -42,8 +42,6 @@
   display: flex;
   gap: 170px;
 }
-.footer_left {
-}
 .footer_lists {
   display: flex;
   gap: 170px;
