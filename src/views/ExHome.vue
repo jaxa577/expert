@@ -19,17 +19,14 @@ export default {
   <mainHeader />
   <main class="main">
     <mainHero id="hero" />
-    <!-- <mainModules id="modules" />
-    <mainNews id="news" /> -->
+    <mainModules id="modules" />
+    <mainNews id="news" />
   </main>
-  <!-- <mainFooter id="footer" /> -->
+  <mainFooter id="footer" />
 </template>
 
 <style>
 body {
   background: #f7f8f9;
-}
-.main {
-  padding-bottom: 1000px;
 }
 </style>

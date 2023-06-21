@@ -67,10 +67,20 @@
   font-size: 18px;
   line-height: 130%;
   color: #181818;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .footer_list-item:hover {
   color: #448fff;
 }
 
+@media only screen and (max-width: 1024px) {
+  .footer {
+    padding: 40px 0 50px 0;
+  }
+  .footer_container,
+  .footer_lists {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
 </style>

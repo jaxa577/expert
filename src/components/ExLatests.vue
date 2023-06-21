@@ -259,4 +259,14 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media only screen and (max-width: 768px) {
+  .latest {
+    padding-top: 30px;
+  }
+  .latest_title {
+    font-size: 38px;
+    line-height: 120%;
+  }
+}
 </style>

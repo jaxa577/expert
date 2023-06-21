@@ -305,4 +305,19 @@
   display: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 1024px) {
+  .modules_list-top,
+  .modules_list-center,
+  .modules_list-botom {
+    flex-direction: column;
+  }
+  .modules_mini-item {
+    max-width: unset;
+    width: 100%;
+  }
+  .modules_item-img {
+    display: none;
+  }
+}
 </style>
