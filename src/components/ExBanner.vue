@@ -44,7 +44,7 @@ export default {
   </section>
 </template>
 
-<style>
+<style scoped>
 .banner {
 }
 .banner_container {
@@ -125,10 +125,10 @@ export default {
 }
 .banner_circling {
   position: absolute;
-  right: -55%;
+  right: -35%;
   z-index: 0;
   filter: brightness(0) invert(0.8);
-  animation: pulse-animation 5s infinite;
+  animation: pulse-animation 7s infinite;
 }
 
 @keyframes pulse-animation {

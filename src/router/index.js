@@ -6,6 +6,7 @@ import VacanyResume from "../views/ExVacancyResume.vue";
 import VacanyInfo from "../views/ExVacancyInfo.vue";
 import Test from "../views/EXTest.vue";
 import login from "../views/ExLogin.vue";
+import test from "../views/ExTest5.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/login",
       name: "login",
       component: login,
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: test,
     },
   ],
 });

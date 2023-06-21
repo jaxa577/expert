@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .backg_animation {
   position: fixed;
   top: 0;
