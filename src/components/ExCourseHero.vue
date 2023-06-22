@@ -229,6 +229,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .cHero {
+    padding-top: 80px;
+  }
   .mob_hero-img img {
     height: 300px;
   }
