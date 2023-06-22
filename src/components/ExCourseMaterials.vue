@@ -190,4 +190,29 @@ export default {
   line-height: 150%;
   color: #5a5a5a;
 }
+
+@media only screen and (max-width: 768px) {
+  .materials_intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .materials_intro-desc {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .materials_title {
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .faq__heart-title {
+    font-size: 18px;
+    line-height: 150%;
+    margin-right: 15px;
+  }
+  .faq_inner-item {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
 </style>

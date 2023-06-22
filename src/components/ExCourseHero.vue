@@ -19,6 +19,9 @@
             axborot tizimlari bilan bog'lanish hamda mustaqil takomillashtirib
             borishga mo'ljallangan dasturiy mahsulot to'plami.
           </p>
+          <div class="mob_hero-img">
+            <img src="/images/about_course.png" alt="course image" />
+          </div>
           <div class="cHero_extra">
             <div class="cHero_extra-main">
               <img class="cHero_extra-img" src="/images/owner.png" alt="" />
@@ -54,7 +57,7 @@
   </section>
 </template>
 
-<style>
+<style scoped>
 .cHero {
   padding-top: 125px;
   padding-bottom: 90px;
@@ -96,7 +99,7 @@
   color: #5a5a5a;
 }
 .cHero_extra {
-    margin: 30px 0;
+  margin: 30px 0;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -197,5 +200,62 @@
   height: 465px;
   object-fit: cover;
   object-position: center;
+}
+.mob_hero-img {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .cHero_image {
+    display: none;
+  }
+  .mob_hero-img {
+    width: 100%;
+    display: block;
+  }
+  .mob_hero-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+  }
+  .cHero_desc {
+    width: 100%;
+  }
+  .cHero_text {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mob_hero-img img {
+    height: 300px;
+  }
+  .cHero_title {
+    font-size: 38px;
+    line-height: 120%;
+  }
+  .cHero_text {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .cHero_extra {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .cHero_bottom {
+    flex-direction: column;
+  }
+  .cHero_btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cHero_links {
+    flex-wrap: wrap;
+  }
 }
 </style>

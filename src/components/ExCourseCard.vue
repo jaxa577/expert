@@ -65,6 +65,7 @@ export default {
   overflow: hidden;
   max-width: 285px;
   width: 100%;
+  display: block;
 }
 .course_card-image {
   position: relative;

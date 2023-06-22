@@ -57,4 +57,15 @@
   line-height: 150%;
   color: #5a5a5a;
 }
+
+@media only screen and (max-width: 768px) {
+  .learn_title {
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .learn_item-text {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
 </style>

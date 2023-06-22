@@ -13,7 +13,7 @@
         </p>
       </div>
       <div class="cBanner_video">
-        <img src="/images/design.png" alt="" />
+        <img class="cBanner_img" src="/images/design.png" alt="" />
         <button class="cBanner_play-btn">
           <img src="/images/play.svg" alt="" />
         </button>
@@ -77,5 +77,32 @@
 }
 .cBanner_play-btn img {
   margin-left: 4px;
+}
+@media only screen and (max-width: 1024px) {
+  .cBanner_container {
+    flex-direction: column;
+  }
+  .cBanner_desc,
+  .cBanner_video {
+    width: 100%;
+  }
+  .cBanner_img {
+    width: calc(100% - 100px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cBanner_title {
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .cBanner_text {
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .cBanner_img {
+    width: calc(100% - 70px);
+  }
 }
 </style>

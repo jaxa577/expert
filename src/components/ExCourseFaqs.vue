@@ -46,6 +46,7 @@ export default {
 <template>
   <section class="faq">
     <div class="container faq_container">
+      <h2 class="faq_title">Часто задаваемые вопросы</h2>
       <div class="faq_list">
         <div
           @click="openAnswer(index)"
@@ -76,6 +77,13 @@ export default {
 <style scoped>
 .faq {
   padding-bottom: 90px;
+}
+.faq_title {
+  color: #181818;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 130%;
+  margin-bottom: 30px;
 }
 .faq_list {
   display: flex;
@@ -164,5 +172,20 @@ export default {
   font-size: 18px;
   line-height: 150%;
   color: #5a5a5a;
+}
+
+@media only screen and (max-width: 768px) {
+  .faq_title {
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .faq__dropDown-txt {
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 150%;
+  }
+  .openedAnswer {
+    max-height: 400px;
+  }
 }
 </style>

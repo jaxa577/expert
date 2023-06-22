@@ -111,6 +111,7 @@ export default {
 <template>
   <section class="sCourses">
     <div class="container sCourse_container">
+      <h2 class="similars_title">Другие похожие курсы</h2>
       <div class="catalogue_right">
         <div class="catalogue_course-list">
           <courseCard
@@ -146,32 +147,12 @@ export default {
 .catalogue_right {
   width: 100%;
 }
-.catalogue_search {
-  position: relative;
-  display: flex;
+.similars_title {
+  color: #181818;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 130%;
   margin-bottom: 30px;
-}
-.catalogue_search-input {
-  border: none;
-  outline: none;
-  background: none;
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid rgba(90, 90, 90, 0.1);
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  border-radius: 18px;
-  padding: 16px 48px 16px 20px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: #5a5a5a;
-}
-.catalogue_search-btn {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 .catalogue_course-list {
   display: flex;
@@ -204,5 +185,12 @@ export default {
 .catalogue_pagination-item.active {
   background: #448fff;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  .similars_title {
+    font-size: 30px;
+    line-height: 120%;
+  }
 }
 </style>
